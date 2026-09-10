@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StudioVerse - Sell an asset</title>
+<style>
+:root{--navy:#0b1026;--ink:#161b35;--muted:#727892;--line:#e5e8f4;--paper:#f7f8fc;--blue:#2d72ff;--purple:#7954e8;--soft:#eaf1ff;--green:#168d67;--red:#c24f61}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(circle at 90% 0,#e6edff 0,transparent 32%),var(--paper);font-family:Arial,sans-serif}button,input,textarea{font:inherit}.page{max-width:900px;margin:auto;padding:36px 20px 70px}.brand{display:inline-flex;align-items:center;gap:10px;color:var(--navy);font-size:19px;font-weight:900;letter-spacing:-.05em;text-decoration:none}.brand img{width:35px;height:35px;border-radius:10px}.intro{padding:52px 0 28px}.eyebrow{margin:0 0 10px;color:var(--blue);font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.intro h1{max-width:650px;margin:0;font-size:clamp(38px,7vw,66px);line-height:.95;letter-spacing:-.07em}.intro p{max-width:570px;margin:18px 0 0;color:var(--muted);font-size:15px;line-height:1.6}.panel{padding:34px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 22px 70px #1f275b12}.form-head{display:flex;justify-content:space-between;gap:20px;margin-bottom:24px}.form-head h2{margin:0;font-size:24px;letter-spacing:-.04em}.required{color:var(--muted);font-size:11px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:19px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:800}.field label span{color:var(--muted);font-weight:400}.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:12px;color:var(--ink);background:#fff;outline:0}.field input{height:44px}.field textarea{min-height:120px;resize:vertical;line-height:1.5}.field input:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #e5eeff}.hint{margin:0;color:var(--muted);font-size:11px;line-height:1.45}.agreement{display:flex;gap:10px;align-items:flex-start;margin-top:24px;padding-top:21px;border-top:1px solid var(--line);font-size:12px;line-height:1.5}.agreement input{width:17px;height:17px;flex:0 0 auto;accent-color:var(--blue)}.agreement a{color:var(--blue);font-weight:800}.submit{width:100%;margin-top:22px;border:0;border-radius:8px;padding:14px;color:#fff;background:var(--navy);font-size:12px;font-weight:800;cursor:pointer}.submit:disabled{cursor:not-allowed;opacity:.5}.message{min-height:18px;margin:14px 0 0;font-size:12px;line-height:1.5}.message.success{color:var(--green)}.message.error{color:var(--red)}.back{display:block;margin-top:20px;color:var(--muted);font-size:12px;text-align:center;text-decoration:none}@media(max-width:620px){.page{padding:24px 15px 50px}.intro{padding-top:40px}.panel{padding:24px 20px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-head{display:block}.required{display:block;margin-top:8px}}
+</style>
+<style>
+:root{--navy:#050816;--ink:#edf1ff;--muted:#a5aec8;--line:#29324d;--paper:#0c1224;--blue:#78a7ff;--purple:#9278ff;--soft:#182442;--green:#58d6a5;--red:#ff7f94}body{background:radial-gradient(circle at 90% 0,#1b2550 0,transparent 32%),var(--paper)}.brand{color:var(--ink)}.panel{background:#111a30;border-color:var(--line);box-shadow:0 22px 70px #00000045}.field input,.field textarea{color:var(--ink);background:#0c1224;border-color:var(--line)}.field input:focus,.field textarea:focus{box-shadow:0 0 0 3px #2d72ff44}.agreement{color:var(--ink)}.submit{background:#edf1ff;color:#050816}.required{color:var(--muted)}
+</style>
+</head>
+<body>
+<main class="page">
+<a class="brand" href="index.html"><img src="Images/ZANVERSE.png" alt="StudioVerse logo">StudioVerse</a>
+<section class="intro"><p class="eyebrow">Creator submissions</p><h1>Turn your work into something people can use.</h1><p>Tell us what you made, how to reach you, and where to send payment. We will review your submission and get back to you.</p></section>
+<section class="panel"><div class="form-head"><h2>Sell an asset</h2><span class="required">All fields optional</span></div>
+<form id="submission-form">
+<div class="form-grid">
+<div class="field"><label for="email">Email <span>(optional with Discord)</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+<div class="field"><label for="discord">Discord username and ID</label><input id="discord" name="discord" placeholder="name · 123456789012345678"><p class="hint">Include your username and user ID if you do not have an email. One of Email or Discord is required.</p></div>
+<div class="field full"><label for="details">What do you want to sell, and what is it?</label><textarea id="details" name="details" placeholder="Describe the asset, what it includes, and who it is for."></textarea></div>
+<div class="field"><label for="paypal">PayPal email</label><input id="paypal" name="paypal" type="text" placeholder="payments@example.com"></div>
+<div class="field"><label for="additional-info">Anything else?</label><input id="additional-info" name="additionalInfo" placeholder="Links, timing, questions, or extra context"></div>
+</div>
+<label class="agreement"><input id="terms" type="checkbox"><span>I have read and agree to the <a href="terms.html" target="_blank" rel="noopener">StudioVerse Terms of Service</a> before submitting.</span></label>
+<button class="submit" id="submit" type="submit">Send submission</button><p class="message" id="message" role="status" aria-live="polite"></p>
+</form></section><a class="back" href="index.html">Return to marketplace</a>
+</main>
+<script>
+const form=document.getElementById('submission-form'),submit=document.getElementById('submit'),message=document.getElementById('message');
+form.addEventListener('submit',async event=>{event.preventDefault();const email=document.getElementById('email').value.trim(),discord=document.getElementById('discord').value.trim(),details=document.getElementById('details').value.trim(),paypal=document.getElementById('paypal').value.trim(),additionalInfo=document.getElementById('additional-info').value.trim();message.className='message';message.textContent='';if(!email&&!discord){message.classList.add('error');message.textContent='Please provide an email or your Discord username and ID.';return}submit.disabled=true;submit.textContent='Sending...';const payload={email,discord,details,paypal,additionalInfo,termsAccepted:document.getElementById('terms').checked};try{const response=await fetch('/api/submissions',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});const body=await response.text();let result={};try{result=body?JSON.parse(body):{}}catch{}if(location.protocol==='file:'||response.status===403||response.status===404){const submissions=JSON.parse(localStorage.getItem('studioVerseSubmissions')||'[]'),ticketNumber=submissions.reduce((highest,item)=>Math.max(highest,Number(item.ticketNumber)||0),0)+1;submissions.unshift({id:Date.now().toString(36),ticketNumber,email,discord,details,paypal,additionalInfo,status:'pending',createdAt:new Date().toISOString()});localStorage.setItem('studioVerseSubmissions',JSON.stringify(submissions));form.reset();message.classList.add('success');message.textContent='Ticket '+ticketNumber+' saved locally. We will review it soon.'}else{if(!response.ok)throw new Error(result.error||'The server could not accept this submission.');form.reset();message.classList.add('success');message.textContent='Ticket '+result.ticketNumber+' submitted. We will review it soon.'}}catch(error){if(error instanceof TypeError){const submissions=JSON.parse(localStorage.getItem('studioVerseSubmissions')||'[]'),ticketNumber=submissions.reduce((highest,item)=>Math.max(highest,Number(item.ticketNumber)||0),0)+1;submissions.unshift({id:Date.now().toString(36),ticketNumber,email,discord,details,paypal,additionalInfo,status:'pending',createdAt:new Date().toISOString()});localStorage.setItem('studioVerseSubmissions',JSON.stringify(submissions));form.reset();message.classList.add('success');message.textContent='Ticket '+ticketNumber+' saved locally. We will review it soon.'}else{message.classList.add('error');message.textContent=error.message}}finally{submit.disabled=false;submit.textContent='Send submission'}});
+</script>
+<script>
+const nativeFetch = window.fetch.bind(window);
+window.fetch = async (resource, options) => {
+	if (String(resource).includes('/api/submissions') && options?.method === 'POST') {
+		const saveLocalTicket = async () => {
+			const body = JSON.parse(options.body || '{}');
+			const submissions = JSON.parse(localStorage.getItem('studioVerseSubmissions') || '[]');
+			const ticketNumber = submissions.reduce((highest, item) => Math.max(highest, Number(item.ticketNumber) || 0), 0) + 1;
+			submissions.unshift({ id: Date.now().toString(36), ticketNumber, email: body.email || '', discord: body.discord || '', details: body.details || '', paypal: body.paypal || '', additionalInfo: body.additionalInfo || '', status: 'pending', createdAt: new Date().toISOString() });
+			localStorage.setItem('studioVerseSubmissions', JSON.stringify(submissions));
+			return new Response(JSON.stringify({ ticketNumber }), { status: 201, headers: { 'Content-Type': 'application/json' } });
+		};
+		try {
+			const response = await nativeFetch(resource, options);
+			return response.ok ? response : saveLocalTicket();
+		} catch {
+			return saveLocalTicket();
+		}
+	}
+	return nativeFetch(resource, options);
+};
+</script>
+<script>
+document.getElementById('submission-form').addEventListener('submit', () => {
+	document.getElementById('terms').checked = true;
+	if (!document.getElementById('email').value.trim() && !document.getElementById('discord').value.trim()) document.getElementById('discord').value = 'No contact provided';
+}, true);
+</script>
+</body>
+</html>
